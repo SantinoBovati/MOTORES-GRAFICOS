@@ -4,7 +4,6 @@ public class personaje : MonoBehaviour
 {
     public CharacterController Charactercontroller;
     public Vector3 StartPosition;
-    public Vector3 MoveDirection;
     public int Counter = 0;
     public float Speed = 5f;
     private float gravity = -9.81f;
