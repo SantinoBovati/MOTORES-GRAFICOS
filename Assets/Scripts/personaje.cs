@@ -4,8 +4,10 @@ public class personaje : MonoBehaviour
 {
     public CharacterController Charactercontroller;
     public Vector3 StartPosition;
+    public Vector3 MoveDirection;
     public int Counter = 0;
     public float Speed = 5f;
+    private float gravity = -9.81f;
     void Start()
     {
         Debug.Log("Arranca el PJ a funcionar");
@@ -30,6 +32,10 @@ public class personaje : MonoBehaviour
         {
             //transform.Translate(new Vector3(1, 0, 0) * Speed * Time.deltaTime);
             Charactercontroller.Move(new Vector3(1, 0, 0) * Speed * Time.deltaTime);
+        }
+        if (Charactercontroller.isGrounded == false)
+        {
+            Charactercontroller.Move(new Vector3(0, gravity, 0) * Time.deltaTime);
         }
     }
 }
