@@ -576,7 +576,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PhysicsPlayer
   rb: {fileID: 499111540}
-  ForceDirection: {x: 0, y: 0, z: 0}
+  ForceDirection: {x: 0, y: 100, z: 0}
 --- !u!1 &692268398
 GameObject:
   m_ObjectHideFlags: 0
@@ -2059,7 +2059,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PhysicsPlayer
   rb: {fileID: 499111540}
-  ForceDirection: {x: 0, y: 20, z: 0}
+  ForceDirection: {x: 0, y: 100, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
