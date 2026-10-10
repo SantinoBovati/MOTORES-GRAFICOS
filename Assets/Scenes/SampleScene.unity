@@ -170,6 +170,7 @@ GameObject:
   - component: {fileID: 330585545}
   - component: {fileID: 330585544}
   - component: {fileID: 330585547}
+  - component: {fileID: 330585548}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -245,11 +246,11 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0.16683866, y: -0, z: -0, w: 0.9859842}
-  m_LocalPosition: {x: 0.05000019, y: 1.19, z: -3.086}
+  m_LocalPosition: {x: 12.16, y: 1.814, z: -10.0060005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2086907734}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 19.208, y: 0, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
@@ -295,6 +296,22 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &330585548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57ef239a894ef0b4ca0cd178c09ec6a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ThirdPersonCamera
+  player: {fileID: 2086907734}
+  mouseSensitivity: 400
+  distanceFromPlayer: 4
+  height: 1.5
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,7 +594,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PhysicsPlayer
   rb: {fileID: 499111540}
   moveSpeed: 5
-  jumpForce: 300
+  jumpForce: 10
+  cameraTransform: {fileID: 0}
 --- !u!1 &692268398
 GameObject:
   m_ObjectHideFlags: 0
@@ -780,7 +798,7 @@ GameObject:
   - component: {fileID: 916827036}
   - component: {fileID: 916827035}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Suelo
   m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -875,7 +893,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0, z: 0}
-  m_LocalScale: {x: 3, y: 1, z: 3}
+  m_LocalScale: {x: 14.523001, y: 1, z: 9.0492}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1900,7 +1918,6 @@ GameObject:
   - component: {fileID: 2086907733}
   - component: {fileID: 2086907732}
   - component: {fileID: 2086907731}
-  - component: {fileID: 2086907735}
   - component: {fileID: 2086907737}
   - component: {fileID: 2086907738}
   m_Layer: 0
@@ -2002,26 +2019,9 @@ Transform:
   m_LocalPosition: {x: 12.11, y: 1, z: -6.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 330585546}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2086907735
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2086907730}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f38edca284266f949b629fb944d4babf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  Charactercontroller: {fileID: 0}
-  StartPosition: {x: 0, y: 1.08, z: -7}
-  Counter: 0
-  Speed: 5
 --- !u!114 &2086907737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2036,7 +2036,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PhysicsPlayer
   rb: {fileID: 2086907738}
   moveSpeed: 5
-  jumpForce: 50
+  jumpForce: 10
+  cameraTransform: {fileID: 330585546}
 --- !u!54 &2086907738
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2062,13 +2063,14 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 48
+  m_Constraints: 112
   m_CollisionDetection: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 410087041}
+  - {fileID: 330585546}
   - {fileID: 832575519}
   - {fileID: 916827038}
   - {fileID: 94730628}
