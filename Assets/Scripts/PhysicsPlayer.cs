@@ -65,6 +65,11 @@ public class PhysicsPlayer : MonoBehaviour
         {
             isGrounded = true;
         }
+        if (collision.gameObject.CompareTag("Item"))
+        {
+            Debug.Log("Collision with Item detected!" + collision.gameObject.name);
+            Destroy(collision.gameObject);
+        }
     }
     private void OnCollisionExit(Collision collision)
     {

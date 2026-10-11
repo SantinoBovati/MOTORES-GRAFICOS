@@ -9,6 +9,8 @@ TagManager:
   - Sphere
   - ProBuilder
   - ProBuilderObjects
+  - Pro Builder
+  - Item
   layers:
   - Default
   - TransparentFX
