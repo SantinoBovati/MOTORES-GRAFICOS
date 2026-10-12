@@ -6,7 +6,7 @@ public class PhysicsPlayer : MonoBehaviour
     public Rigidbody rb;
     public float moveSpeed = 5f;
     public float jumpForce = 300f;
-    private int itemcollected = 0;
+    public int itemcollected = 0;
     public Transform cameraTransform;
 
     private bool isGrounded;
@@ -75,4 +75,9 @@ public class PhysicsPlayer : MonoBehaviour
         }
     }
 
+    public void CollectItem()
+    {
+        itemcollected++;
+        Debug.Log("Items collected: " + itemcollected);
+    }
 }

@@ -17,9 +17,10 @@ public class Item : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Player has picked up the item: " + gameObject.name);
-            //Destroy(gameObject);
+            //Debug.Log("Player has picked up the item: " + gameObject.name);
+            Destroy(gameObject);
             player = other.GetComponent<PhysicsPlayer>();
+            player.CollectItem();
         }
     }
 }
