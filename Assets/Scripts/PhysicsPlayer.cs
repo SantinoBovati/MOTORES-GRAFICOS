@@ -6,6 +6,7 @@ public class PhysicsPlayer : MonoBehaviour
     public Rigidbody rb;
     public float moveSpeed = 5f;
     public float jumpForce = 300f;
+    private int itemcollected = 0;
     public Transform cameraTransform;
 
     private bool isGrounded;
@@ -65,11 +66,6 @@ public class PhysicsPlayer : MonoBehaviour
         {
             isGrounded = true;
         }
-        if (collision.gameObject.CompareTag("Item"))
-        {
-            Debug.Log("Collision with Item detected!" + collision.gameObject.name);
-            Destroy(collision.gameObject);
-        }
     }
     private void OnCollisionExit(Collision collision)
     {
@@ -78,4 +74,5 @@ public class PhysicsPlayer : MonoBehaviour
             isGrounded = false;
         }
     }
+
 }
