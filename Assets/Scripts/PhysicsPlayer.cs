@@ -1,5 +1,7 @@
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PhysicsPlayer : MonoBehaviour
 {
@@ -7,6 +9,8 @@ public class PhysicsPlayer : MonoBehaviour
     public float moveSpeed = 5f;
     public float jumpForce = 300f;
     public int itemcollected = 0;
+    public TextMeshProUGUI itemCounterText;
+    public GameObject winpanel;
     public Transform cameraTransform;
 
     private bool isGrounded;
@@ -79,5 +83,12 @@ public class PhysicsPlayer : MonoBehaviour
     {
         itemcollected++;
         Debug.Log("Items collected: " + itemcollected);
+        itemCounterText.text = "Items Collected: " + itemcollected;
+        if (itemcollected == 4)
+        {
+            Debug.Log("You have collected all items!");
+            winpanel.SetActive(true);
+        }
     }
+
 }
